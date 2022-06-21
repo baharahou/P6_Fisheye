@@ -64,9 +64,13 @@ img {
    margin-top: 3rem;
  }
  /*** PHOTOGRAPHER INFO SECTIONS ***/
+ .photographer__header{
+  width: 100%;
+ }
  .photographer__id__section {
    display: flex;
    justify-content: flex-start;
+   align-items: center;
  }
  .photographer__id__section:focus{
   outline: blue;
@@ -124,10 +128,13 @@ img {
 }
 .contact {
   position: fixed;
-  left: 34.47%;
+  /* left: 34.47%; */
   right: 27.2%;
   bottom: 12rem;
   border-radius: 5px;
+  font-size: 23px;
+  width: 245px;
+  cursor: pointer;
 }
 .contact, 
 .listbox__btn {
@@ -149,8 +156,10 @@ img {
   margin-top: 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
+
+  justify-content: center;
+  
 }
 .photo__card {
   display: flex;
@@ -203,6 +212,7 @@ img {
 }
 .photo__likes {
   margin-right: 1rem;
+  font-size: 20px;
 }
 .likesAndPrice {
   display: none;
@@ -234,7 +244,11 @@ img {
 .form-header {
   font-weight: 400;
   font-size: 3.2rem;
+  text-align: center;
   padding: 1rem 1rem 1rem 4rem;
+}
+#contact-form{
+  display: grid;
 }
 .modal-body {
   padding: 15px 8%;
@@ -277,14 +291,13 @@ input {
   height: 12rem;
 }
 #submit-btn {
-  position: relative;
   margin-top: 1rem;
   padding: 1rem 2rem;
   background: #911c1c;
   border: none;
   border-radius: 5px;
   color: #fff;
-  left: 12rem;
+  
 }
 /* Class error for message added by JS*/
 .formData[data-error]::after {
@@ -416,16 +429,21 @@ input[data-error]::after {
     right: 8rem;
   }
   .photographer__id img {
-    height: 14rem;
-    width: 14rem;
+    height: 18rem;
+    width: 18rem;
+  }
+  .photographer__header{
+    display: grid;
   }
   .contact {
     position: relative;
-    left: 45rem;
-    bottom: 18rem;
+    /* left: 45rem; */
+    bottom: 10rem;
     right: unset;
-    top: unset;
+    
     padding: 1.5rem;
+    justify-self: center;
+
 }
   /*** LIST-BOX ***/
   .listbox_container {
@@ -472,6 +490,9 @@ input[data-error]::after {
     margin-left: 0.5rem;
   }
   /*** GALLERY PHOTOS ***/
+  .gallery{
+    justify-content: space-between;
+  }
   .gallery__photo>.photo {
     object-position: top;
   }
@@ -508,11 +529,11 @@ input[data-error]::after {
   display: inline-flex;
   bottom: 0;
   right: 10rem;
-  width: 24rem;
+  width: 30rem;
   margin: 0 auto;
   border-radius: 5px;
-  font-size: 1.7rem;
-  height: 4rem;
+  font-size: 2.7rem;
+  height: 5rem;
   background: var(--secondary-color);
   align-items: center;
 }

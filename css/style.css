@@ -141,8 +141,8 @@ main {
 }
 .photographer__img img {
     position: relative;
-    height: 17rem;
-    width: 17rem;
+    height: 18rem;
+    width: 18rem;
     border-radius: 50%;
     box-shadow: -8px 10px 53px -18px rgba(0,0,0,0.51);
     -webkit-box-shadow: -8px 10px 53px -18px rgba(0,0,0,0.51);
