@@ -1,0 +1,20 @@
+{
+  "name": "p6_fisheye_houssin",
+  "version": "1.0.0",
+  "description": "projet 6 OC parcour reactJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./sass/main.scss:./css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baharahou/P6_Fisheye.git"
+  },
+  "author": "baharahou elhoussaine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baharahou/P6_Fisheye/issues"
+  },
+  "homepage": "https://github.com/baharahou/P6_Fisheye#readme"
+}

@@ -1,36 +1,190 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Page photographe sélectionné" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="photographerPage.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous"
+    />
+    <title>Page Photographe</title>
   </head>
   <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+    <!--HEADER-->
+    <header id="main-header" aria-label="header">
+      <div class="logo" aria-label="Retour page principale">
+        <a href="./index.html" class="logo-link">
+          <img
+            class="logo-img"
+            src="./Medias/logo.png"
+            alt="retour page principale FishEye"
+        /></a>
       </div>
+    </header>
+    <!--END OF HEADER-->
+
+    <!--MAIN CONTENT-->
+    <main>
+      <!--PHOTOGRAPHER INFO SECTION-->
+      <section
+        class="photographer__id__section"
+        aria-label="Informations Photographe"
+        role="information"
+        tabindex="0"
+      ></section>
+      <!--END OF PHOTOGRAPHER INFO SECTION-->
+      <!--FILTER-->
+      <!--filter container-->
+      <div class="listbox_container">
+        <span class="filter-by" aria-label="liste filtrante">Trier par</span>
+        <select
+          aria-label="filtrer par"
+          name="filtre"
+          id="listbox"
+          class="listbox listbox__btn"
+        >
+          <option value="popularité">
+            Popularité <i class="fas fa-chevron-down"></i
+            ><i class="fas fa-chevron-up"></i>
+          </option>
+          <option value="date">Date</option>
+          <option value="titre">Titre</option>
+        </select>
+      </div>
+      <!--End of filter container-->
+      <!--END OF FILTER-->
+
+      <!--GALLERY SECTION-->
+      <section aria-label="gallery photographe" class="gallery"></section>
+      <!--END OF GALLERY SECTION-->
+
+      <div class="likesAndPrice"></div>
+
+      <!--CONTACT MODAL-->
+      <div class="bground-contact">
+        <div
+          class="content"
+          aria-label="modale de contact"
+          id="focus"
+          tabindex="0"
+        >
+          <h1 class="form-header"></h1>
+          <button class="close-contactForm">
+            <i class="fas fa-times"></i>
+          </button>
+          <div role="dialog" id="modal-div" class="modal-body">
+            <form
+              action="./pages/photographer.html"
+              method="post"
+              id="contact-form"
+            >
+              <div
+                id="prenom-div"
+                class="formData"
+                aria-label="entrer votre prénom"
+              >
+                <label for="prenom">Prénom</label>
+                <input
+                  class="text-control"
+                  type="text"
+                  name="prenom"
+                  id="prenom"
+                  required
+                />
+              </div>
+              <div id="nom-div" class="formData" aria-label="entrer votre nom">
+                <label for="nom">Nom</label>
+                <input
+                  class="text-control"
+                  type="text"
+                  name="nom"
+                  id="nom"
+                  required
+                />
+              </div>
+              <div
+                id="email-div"
+                class="formData"
+                aria-label="entrer votre email"
+              >
+                <label for="email">email</label>
+                <input
+                  class="text-control"
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                />
+              </div>
+              <div
+                id="message-div"
+                class="formData"
+                aria-label="entrer votre message"
+              >
+                <label for="message">Votre message</label>
+                <input
+                  class="text-control"
+                  type="text"
+                  name="message"
+                  id="message"
+                  required
+                />
+              </div>
+
+              <button
+                id="submit-btn"
+                class="btn"
+                type="submit"
+                aria-label="envoyer formulaire"
+              >
+                Envoyer
+              </button>
+            </form>
+          </div>
+          <!--End of modal-div-->
+        </div>
+        <!--End of div content-->
+      </div>
+      <!--END OF CONTACT MODAL-->
+
+      <!--LIGHTBOX-->
+      <div id="lightbox">
+        <button class="close-lightbox" aria-label="fermer médias lightbox">
+          <i class="fas fa-times"></i>
+        </button>
+        <!-- Next/previous controls -->
+        <button
+          class="lightbox-btn"
+          id="prev"
+          type="button"
+          aria-label="photo précédente"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+          class="lightbox-btn"
+          id="next"
+          type="button"
+          aria-label="photo suivante"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="slides"></div>
+      </div>
+      <!--END OF LIGHTBOX-->
     </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <!--END OF MAIN CONTENT-->
+
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>

@@ -1,105 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="FishEye est un site regroupants des photographes de grandes qualités. Vous trouverez certainement le photographe qu'il vous faut!"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./assets/icons/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,500&display=swap"
       rel="stylesheet"
     />
-    <title>Fisheye</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>FishEye - Trouvez le photographe qu'il vous faut</title>
   </head>
   <body>
-    <header class="header" role="banner">
-      <img src="assets/images/logo.png" class="logo" />
-      <h1>Nos photographes</h1>
-      <nav
-        class="navigation"
-        role="navigation"
-        aria-label="Categorie de Photographes"
-      >
-        <ul class="navigation__list">
-          <li class="navigation__li">
-            <a
-              href="#"
-              class="navigation__link tags"
-              tabindex="0"
-              aria-label="Tag Portrait"
-              >#Portrait</a
-            >
-          </li>
-          <li class="navigation__li">
-            <a
-              href="#"
-              class="navigation__link tags"
-              tabindex="0"
-              aria-label="Tag Art"
-              >#Art</a
-            >
-          </li>
-          <li class="navigation__li">
-            <a
-              href="#"
-              class="navigation__link tags"
-              tabindex="0"
-              aria-label="Tag Fashion"
-              >#Fashion</a
-            >
-          </li>
-          <li class="navigation__li">
-            <a
-              href="#"
-              class="navigation__link tags"
-              tabindex="0"
-              aria-label="Tag Architecture"
-              >#Architecture</a
-            >
-          </li>
-          <li class="navigation__li">
-            <a
-              href="#"
-              class="navigation__link tags"
-              tabindex="0"
-              aria-label="Tag Travel"
-              >#Travel</a
-            >
-          </li>
-          <li class="navigation__li">
-            <a
-              href="#"
-              class="navigation__link tags"
-              tabindex="0"
-              aria-label="Tag Sport"
-              >#Sport</a
-            >
-          </li>
-          <li class="navigation__li">
-            <a
-              href="#"
-              class="navigation__link tags"
-              tabindex="0"
-              aria-label="Tag Animals"
-              >#Animals</a
-            >
-          </li>
-          <li class="navigation__li">
-            <a
-              href="#"
-              class="navigation__link tags"
-              tabindex="0"
-              aria-label="Tag Events"
-              >#Events</a
-            >
-          </li>
-        </ul>
-      </nav>
+    <!--HEADER-->
+    <header id="main-header" aria-label="header">
+      <div class="logo">
+        <a href="./index.html" class="logo-link">
+          <img
+            class="logo-img"
+            src="./assets/images/logo.png"
+            alt="Page principale FishEye"
+        /></a>
+      </div>
+
+      <!--NAVIGATION-->
+      <nav class="nav-bar" aria-label="nav-bar" tabindex="0"></nav>
+      <!--END OF NAVIGATION-->
+
+      <h1 aria-label="Nos photographes" class="main-title">Nos photographes</h1>
+
+      <!--MAIN LINK-->
+      <div class="mainContent__link" tabindex="0">
+        <a href="#" aria-label="Accédez au contenu principal de la page"
+          >Passer au contenu</a
+        >
+      </div>
     </header>
-    <main id="main">
-      <div class="photographer_section"></div>
+    <!--END OF HEADER-->
+
+    <!--MAIN CONTENT-->
+    <main id="main__content">
+      <!--PHOTOGRAPHER CONTAINER SECTION-->
+      <section class="photographers__container">
+        <!-- <h2
+          aria-label="Cartes photographes"
+          class="photographersSection-header"
+        >
+          Cartes photographes
+        </h2> -->
+      </section>
+      <!--END OF PHOTOGRAPHER CONTAINER SECTION-->
     </main>
-    <script src="scripts/factories/Photographer.js"></script>
-    <script src="scripts/pages/index.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
+    <!--END OF MAIN CONTENT-->
+
+    <!--JS SCRIPT-->
+    <script type="module" src="./scripts/app.js"></script>
   </body>
 </html>

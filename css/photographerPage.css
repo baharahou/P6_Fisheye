@@ -1,0 +1,536 @@
+/*************************
+ SELECTED PHTOGRAPHER PAGE 
+ ************************/
+
+/* Basic styling */
+
+:root {
+  --first-color: #911c1c;
+  --secondary-color: #D44507;
+  --third-color: #757575;
+  --modal-duration: 0.8s;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 90%;
+  margin: auto;
+}
+a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/*********************************** Mobile first ***********************************/
+
+/*********
+ HEADER 
+ *********/
+#main-header {
+  width: max-content;
+  height: 7vh;
+  margin-top: 2rem;
+  display: flex;
+}
+/*** LOGO ***/
+.logo {
+  width: 15rem;
+  height: 3.75rem;
+}
+.logo-img {
+  position: relative;
+  width: 100%;
+  max-width: 13rem;
+  height: auto;
+}
+/**************
+ MAIN CONTENT
+ **************/
+ main {
+   margin-top: 3rem;
+ }
+ /*** PHOTOGRAPHER INFO SECTIONS ***/
+ .photographer__id__section {
+   display: flex;
+   justify-content: flex-start;
+ }
+ .photographer__id__section:focus{
+  outline: blue;
+}
+.photographer__info {
+  margin: 1rem 0;
+}
+.photographer__id {
+  float: right;
+  top: 5.5rem;
+  position: absolute;
+  right: 1rem;
+  padding: 1rem;
+}
+.photographer__id img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  box-shadow: -8px 10px 53px -18px rgba(0, 0, 0, 0.51);
+  -webkit-box-shadow: -8px 10px 53px -18px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: -8px 10px 53px -18px rgba(0, 0, 0, 0.51);
+}
+.photographer__name {
+  color: var(--secondary-color);
+  margin: 2rem 0 0.5rem;
+  font-size: 3rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+.photographer__page-text {
+  font-size: 1.3rem;
+}
+.photographer__location {
+  color: var(--first-color);
+  line-height: 2rem;
+}
+.photographer__devise {
+  color: var(--third-color);
+}
+.tag__link {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  color: var(--first-color);
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  display: flex;
+  cursor: unset;
+}
+.tag__link-tag {
+  border: 0.5px solid #c4c4c4;
+  padding: 0.2rem 0.5rem;
+  border-radius: 11px;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+.contact {
+  position: fixed;
+  left: 34.47%;
+  right: 27.2%;
+  bottom: 12rem;
+  border-radius: 5px;
+}
+.contact, 
+.listbox__btn {
+  padding: 1rem;
+  border-radius: 5px;
+  background: var(--first-color);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+}
+/*** LIST-BOX ***/
+.listbox_container, 
+.filter-by, 
+.listbox__btn {
+  display: none;
+}
+/*** MEDIA GALLERY ***/
+.gallery{
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.photo__card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.media-div, .media-div:focus {
+  height: 29rem;
+  width: 35rem;
+}
+.photo, 
+.lightbox-photo {
+  border-radius: 5px;
+  width: 34rem;
+  height: 28rem;
+}
+.video {
+  border-radius: 5px;
+  object-fit: cover;
+}
+/*** MEDIA DESCRIPTION ***/
+.photoDescription-container{
+  width: 34rem;
+}
+.photo__description {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.7rem;
+  color: var(--first-color);
+}
+.photo__date {
+  visibility: hidden;
+  display: none;
+}
+/*** LIKES ***/
+.likes {
+  display: flex;
+  width: 6rem;
+  justify-content: end;
+  position: relative;
+}
+.like,
+.like--liked,
+.portfolio__heart {
+  border: none;
+  background: transparent;
+  color: var(--first-color);
+  cursor: pointer;
+}
+.photo__likes {
+  margin-right: 1rem;
+}
+.likesAndPrice {
+  display: none;
+}
+/*** CONTACT MODAL ***/
+.bground-contact {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
+}
+.content {
+  margin: 5% auto;
+  width: 100%;
+  max-width: 500px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #db8876;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 10px;
+}
+.form-header {
+  font-weight: 400;
+  font-size: 3.2rem;
+  padding: 1rem 1rem 1rem 4rem;
+}
+.modal-body {
+  padding: 15px 8%;
+  margin: 15px auto;
+}
+.close-contactForm {
+  display: block;
+  padding: 1rem;
+  width: 4rem;
+  position: absolute;
+  height: 4rem;
+  font-size: 3rem;
+  right: 3rem;
+  top: 2rem;
+  color: #fff;
+  font-weight: 300;
+  border: none;
+  background: none;
+}
+label {
+  font-size: 1.4rem;
+  font-weight: normal;
+  display: inline-block;
+  margin: 1rem 1rem 1rem 0;
+}
+input {
+  padding: 8px;
+  border: 0.8px solid #ccc;
+  outline: none;
+}
+.text-control {
+  margin: 0;
+  padding: 8px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 20px;
+  height: 48px;
+}
+#message {
+  height: 12rem;
+}
+#submit-btn {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background: #911c1c;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  left: 12rem;
+}
+/* Class error for message added by JS*/
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 12px;
+  color: #e54858;
+  display: block;
+  margin: 7px 0;
+  text-align: right;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+.formData[data-error-visible="true"]::after {
+  opacity: 1;
+}
+.formData[data-error-visible="true"] .text-control {
+  border: 2px solid #e54858;
+}
+input[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: red;
+}
+/* End of class error for message added by JS*/
+/*** LIGHTBOX ***/
+#lightbox {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+#lightbox.active {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 100%;
+  margin-top: 2rem;
+}
+.close-lightbox, .lightbox-btn {
+  display: block;
+  color: var(--first-color);
+  height: 3rem;
+  width: 3rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  position: absolute;
+}
+.close-lightbox {
+  top: 3rem;
+  right: 1rem;
+  float: right;
+}
+#prev {
+  float: left;
+  left: 0.5rem;
+  top: 26rem;
+  transform: translate(0rem, -3rem);
+}
+#next {
+  float: right;
+  right: 0.5rem;
+  top: 26rem;
+  transform: translate(0rem, -3rem);
+}
+.slides {
+  display: block;
+  margin: 0 auto;
+  padding: 1.5rem;
+  height: 50vh;
+}
+.photo__title {
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  color: var(--first-color);
+}
+
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*********************************** DESKTOP ***********************************/
+/*** Merdia-queries ***/
+
+@media (min-width:800px) {
+  /* Basic styling */
+  * {
+    max-width: 1440px;
+  }
+  /*********
+ HEADER 
+ *********/
+ /*** LOGO ***/
+.logo {
+  width: 20rem;
+  height: 6rem;
+}
+.logo-img {
+  max-width: 16rem;
+}
+  /**************
+ MAIN CONTENT
+ **************/
+ /*** PHOTOGRAPHER INFO SECTIONS ***/
+  .photographer__id__section {
+    margin: auto;
+    height: 25rem;
+    padding: 1rem;
+    background: rgba(223, 221, 221, 0.199);
+    border-radius: 5px;
+  }
+  .photographer__name {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+  .photographer__page-text{
+    line-height: 4rem;
+    font-size: 1.8rem;
+  }
+  .photographer__id {
+    top: 12.5rem;
+    right: 8rem;
+  }
+  .photographer__id img {
+    height: 14rem;
+    width: 14rem;
+  }
+  .contact {
+    position: relative;
+    left: 45rem;
+    bottom: 18rem;
+    right: unset;
+    top: unset;
+    padding: 1.5rem;
+}
+  /*** LIST-BOX ***/
+  .listbox_container {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  .filter-by {
+    margin-right: 1rem;
+    display: unset;
+}
+  #listbox, #listbox:focus {
+    background: var(--first-color);
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    position: relative;
+  }
+  option::after {
+    border-radius: 10px;
+    width: 7rem;
+    line-height: 1rem;
+  }
+  .filter-by {
+    margin-right: 1rem;
+    color: #000;
+  }
+  .hidden {
+    display: none;
+  }
+  .fa-chevron-up {
+    display: none;
+  }
+  .listbox__btn {
+    display: flex;
+    position: unset;
+    top: unset;
+    left: unset;
+    padding: 1rem;
+  }
+  .fa-chevron-down {
+    margin-left: 0.5rem;
+  }
+  /*** GALLERY PHOTOS ***/
+  .gallery__photo>.photo {
+    object-position: top;
+  }
+  /*** LIGHTBOX ***/
+  #lightbox.active{
+    height: 100vh;
+  }
+  .slides > video {
+    height: 50rem;
+    width: 56rem;
+  }
+  .slides {
+    height: 100vh;
+  }
+  #prev {
+    top: 34rem;
+  }
+  #next {
+    top: 34rem;
+  }
+  .lightbox-photo {
+    border-radius: 5px;
+    width: 45rem;
+    height: 64rem;
+}
+.close-lightbox, .lightbox-btn {
+  height: 4rem;
+  width: 4rem;
+  font-size: 3rem;
+}
+/*** LIKES AND PRICE DIV ***/
+.likesAndPrice {
+  position: fixed;
+  display: inline-flex;
+  bottom: 0;
+  right: 10rem;
+  width: 24rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-size: 1.7rem;
+  height: 4rem;
+  background: var(--secondary-color);
+  align-items: center;
+}
+.total__likes {
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+}
+.total__likes--heart {
+  display: inline-block;
+  color: #000;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0.5rem;
+}
+.price {
+  padding: 0.5rem;
+  margin-left: 9rem;
+}
+
+}
+

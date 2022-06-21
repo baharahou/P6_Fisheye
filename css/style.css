@@ -1,50 +1,263 @@
-@import url("photographer.css");
+/* Basic styling */
 
-body {
-    font-family: "DM Sans", sans-serif;
+:root {
+    --first-color: #911C1C;
+    --secondary-color: #D44507;
+    --third-color: #757575;
+}
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    width: 95%; 
+    margin: auto;
+}
+a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
 
+/*********************************** Mobile first ***********************************/
 
-header {
+/*********
+ HEADER 
+ *********/
+
+ #main-header {
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    min-width: 37rem;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
-}
-
-h1 {
-    color: #901C1C;
-    margin-right: 100px;
-}
-
+    height: 10vh;
+    margin-top: 2rem;
+    padding: 1rem;
+ }
+/*** LOGO ***/
 .logo {
-    height: 50px;
-    margin-left: 100px;
+    position: absolute;
+    width: 15rem;
+    height: 3.75rem;
+    left: 2rem;
+    top: 4rem;
 }
-
-.photographer_section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
-    margin-top: 100px;
+.logo-img {
+    width: 100%;
+    height: auto;
 }
-
-.photographer_section article {
-    justify-self: center;
+/*** NAV-BAR ***/
+.nav-bar {
+    position: absolute;
+    height: 8vh;
+    top: 8.9rem;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tag__link {
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    text-align: center;
+    color: var(--first-color);
+    margin: 0.5rem;
+}
+.tag__link:focus{
+    font-size: 2rem;
+}
+.tag__link-tag {
+    border: 0.5px solid #C4C4C4;
+    padding: 0.5rem;
+    border-radius: 11px;
+}
+/*** MAIN TITLE ***/
+.main-title {
+    position: absolute;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 18px;
+    text-align: center;
+    color: var(--first-color);
+    right: 3rem;
+    top: 5rem;
+}
+/*** ACCESS CONTENT ***/
+.mainContent__link {
+    display: none;
+    
+}
+/********
+ MAIN 
+ ********/
+main {
+    position: relative;
+    top: 9rem;
+}
+/*******************************
+ SECTION PHTOGRAPHERS CONTAINER 
+ *******************************/
+.photographers__container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+  
+}
+.photographersSection-header {
+    z-index: -20;
+    position: absolute;
+    color: transparent;
+}
+/*** ARTICLE ***/
+.photographer__card {
+    width: 28rem;
+    height: 33rem;
+    margin: 2rem 0;
+}
+.link__photographer {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+}
+/*** PORTRAIT PHOTO ***/
+.photographer__img {
+    position: relative;
+}
+.photographer__img img {
+    position: relative;
+    height: 17rem;
+    width: 17rem;
+    border-radius: 50%;
+    box-shadow: -8px 10px 53px -18px rgba(0,0,0,0.51);
+    -webkit-box-shadow: -8px 10px 53px -18px rgba(0,0,0,0.51);
+    -moz-box-shadow: -8px 10px 53px -18px rgba(0,0,0,0.51);
+}
+/*** TEXT ***/
+.photographer__name {
+    color: var(--secondary-color);
+    margin: 2rem 0 0.5rem;
+    font-size: 3.2rem;
+    line-height: 3.7rem;
+    font-weight: 400;
+    text-align: center;
+}
+.photographer__location {
+    text-align: center;
+    color: var(--first-color);
+    font-size: 2rem;
+    line-height: 1.7rem;
+}
+.photographer__devise, 
+.photographer__price {
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2.7rem;
+}
+.photographer__price {
+    color: var(--third-color);
+}
+.tag_container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+.photographer__tags {
+    margin: 1rem;
+    text-align: center;
 }
 
-.photographer_section article h2 {
-    color: #D3573C;
-    font-size: 36px;
-}
+/*********************************** DESKTOP ***********************************/
 
-.photographer_section article img {
-    height: 200px;
-    width: 200px;
+@media (min-width:800px) {
+
+    /*********
+    HEADER 
+    *********/
+    body {
+        max-width: 1440px;
+    }
+    #main-header {
+        margin-top: 3rem;
+        height: 10vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+    } 
+    .logo {
+        min-width: 15rem;
+        position: relative;
+        top: unset;
+    }
+    /*** NAV-BAR ***/
+    .nav-bar {
+        position: relative;
+        width: 70.5rem;
+        margin: 1rem 5rem;
+        height: 3.25rem;
+        flex-wrap: nowrap;
+        top: unset;
+        justify-content: space-evenly;
+    }
+    .mainContent__link {
+        position: absolute;
+        top: 6%;
+        left: 40%;
+        font-size: 1.7rem;
+        background: #DB8876;
+        border-radius: 5px;
+        padding: 0.5rem;
+    }
+    .main-title {
+        font-size: 2.6rem;
+        position: relative;
+        left: unset;
+        top: unset;
+        min-width: fit-content;
+    }
+    /********
+    MAIN 
+    ********/
+    main {
+        top: unset;
+    }
+    /*******************************
+    SECTION PHTOGRAPHERS CONTAINER 
+    *******************************/
+    .photographers__container {
+        margin-top: 7rem;
+        /*display: grid;
+        grid-template-columns: repeat(3, 380px);
+        grid-template-rows: repeat(2, 400px);
+        justify-items: center;
+        justify-content: space-between;*/
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-between;
+        row-gap: 15px;
+
+    }
+    .photographer__card {
+        margin: 1rem;  
+        width: 30%;
+    }  
+   
 }
